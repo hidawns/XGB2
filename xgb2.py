@@ -28,14 +28,14 @@ def user_input():
                        'General Medicine': 4, 'Homeopath': 5}
     Profile = Profile_mapping[Profile]
 
+    
     Place = st.selectbox('Place', options=[
-        'Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 
-        'Chennai', 'Coimbatore', 'Ernakulam', 'Thiruvananthapuram', 'Other'
+        'Bangalore',  'Chennai', 'Coimbatore', 'Delhi', 'Ernakulam', 'Hyderabad', 'Mumbai', 'Thiruvananthapuram', 'Other'
     ])
-    Place_mapping = {'Bangalore': 0, 'Mumbai': 1, 'Delhi': 2, 'Hyderabad': 3, 
-                     'Chennai': 4, 'Coimbatore': 5, 'Ernakulam': 6, 
-                     'Thiruvananthapuram': 7, 'Other': 8}
+    Place_mapping = {'Bangalore': 0, 'Chennai': 1, 'Coimbatore': 2, 'Delhi': 3, 'Ernakulam': 4, 
+                     'Hyderabad': 5, 'Mumbai': 6, 'Thiruvananthapuram': 7, 'Other': 8}
     Place = Place_mapping[Place]
+    
 
     Fee_category = 0.0  # Initialize Fee_category as 0.0 since it is not an input
 
@@ -59,4 +59,4 @@ input_data = user_input()
 # Make predictions
 if st.button('Predict Fee'):
     prediction = model.predict(input_data)
-    st.write(f"Predicted Doctor Consultation Fee: ₹{np.round(prediction[0], 2)}")
+    st.write(f"Predicted Doctor Consultation Fee: {np.round(prediction[0], 2)}")
