@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load the saved model, encoder, and scaler
-model = joblib.load('xgb_model.pkl')
+model = joblib.load('xgb_model (2).pkl')
 scaler = joblib.load('scaler.pkl')
 encoder = joblib.load('encoder.pkl')
 pipeline = joblib.load('model_pipeline.pkl')
